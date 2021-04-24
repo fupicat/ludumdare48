@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Pod.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Win.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Planet.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=4]
+
+[node name="Earth" type="Node2D"]
+script = ExtResource( 4 )
+next = "Mars"
+
+[node name="Pod" parent="." instance=ExtResource( 1 )]
+position = Vector2( 520.285, 53.4539 )
+
+[node name="Planet" type="KinematicBody2D" parent="."]
+position = Vector2( 510.776, 897.488 )
+script = ExtResource( 3 )
+
+[node name="Col" type="CollisionPolygon2D" parent="Planet"]
+polygon = PoolVector2Array( -67.1246, -1151.75, -65.7413, -580.524, 278.647, -545.819, 358.738, -337.584, 147.833, -423.013, 51.7246, -220.118, -60.402, -230.796, -209.904, -121.34, -20.3568, 108.253, 123.806, 14.8141, 25.0278, -81.2944, 238.602, -65.2763, 286.656, -188.082, 569.642, -124.009, 444.167, -663.285, 89.1001, -703.33, 79.8135, -1126, -55.2493, -1123.94, -61.6061, -1159.96, 126.978, -1153.6, 388.104, -756.723, 617.697, -673.963, 793.896, -361.611, 793.896, -59.937, 660.411, 180.334, 401.453, 313.818, 30.3672, 316.488, -281.985, 252.416, -471.533, 73.5471, -572.98, -156.045, -572.98, -444.371, -484.881, -676.633, -298.003, -759.393 )
+
+[node name="Win" parent="Planet" instance=ExtResource( 2 )]
+position = Vector2( 2.3811, 4.10193 )
