@@ -12,6 +12,7 @@ onready var sprite = $Sprite
 onready var sfx = $SFX
 
 var prev_vel = Vector2(0, 0)
+var can_die = true
 
 # Antes de tudo atualiza a GUI pra ficar certa.
 func _ready():
@@ -29,7 +30,8 @@ func _physics_process(delta):
     # Se a distância entre a velocidade anterior e atual do body for grande, e
     # a mudança de direção for maior que 45 graus significa que o corpo quicou.
     if (prev_vel.distance_to(linear_velocity) > 80) and (
-            abs(prev_vel.angle_to(linear_velocity)) > deg2rad(45)):
+            abs(prev_vel.angle_to(linear_velocity)) > deg2rad(45)) and (
+            can_die):
         
         # Toca o som de impacto com pitch aleatório e volume baseado na
         # velocidade.
@@ -46,14 +48,13 @@ func _physics_process(delta):
         # e morre se a vida for menor que 0.
         vida -= prev_vel.distance_to(linear_velocity) / 100
         if vida < 0:
-            # warning-ignore:return_value_discarded
-            get_tree().reload_current_scene()
+            level.death()
         if vida < 75:
-            $Sprite/Pod/Broken.texture = BROKEN1
+            $Sprite/Sprite/Pod/Broken.texture = BROKEN1
         if vida < 50:
-            $Sprite/Pod/Broken.texture = BROKEN2
+            $Sprite/Sprite/Pod/Broken.texture = BROKEN2
         if vida < 25:
-            $Sprite/Pod/Broken.texture = BROKEN3
+            $Sprite/Sprite/Pod/Broken.texture = BROKEN3
         
         # Por fim atualiza a GUI
         gui_update()
@@ -68,4 +69,8 @@ func _physics_process(delta):
         get_tree().reload_current_scene()
 
 func gui_update():
-    $Sprite/Vida.value = vida
+    $Sprite/Sprite/Vida.value = vida
+
+func win():
+    can_die = false
+    $Sprite/Anim.play("Win")
