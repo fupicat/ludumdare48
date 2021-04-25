@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Planet.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Pod/Pod.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Win.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Rock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Sprites/Level5.png" type="Texture" id=6]
+
+[node name="Mars" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Pod" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1044.12, -937.894 )
+
+[node name="Planet" type="KinematicBody2D" parent="."]
+position = Vector2( -1.12274, 4.00098 )
+rotation = -0.831513
+script = ExtResource( 1 )
+
+[node name="Mars" type="Sprite" parent="Planet"]
+scale = Vector2( 1.65211, 1.65211 )
+texture = ExtResource( 6 )
+
+[node name="Col" type="CollisionPolygon2D" parent="Planet"]
+polygon = PoolVector2Array( -106.148, -1488.3, -119.362, -1337.28, -89.158, -1207.03, 12.7805, -1054.12, 177.015, -925.752, 614.972, -699.222, 786.757, -553.865, 884.92, -366.978, 935.89, -115.907, 932.114, 161.592, 877.369, 442.866, 705.584, 718.477, 486.605, 918.579, 312.932, 1003.53, 39.2088, 1020.52, -191.097, 971.436, -396.861, 884.599, -630.942, 737.355, -821.605, 550.468, -932.982, 388.122, -983.951, 222, -999.053, 50.2145, -988.513, -67.1346, -963.186, -185.754, -920.255, -319.531, -868.798, -434.937, -802.787, -540.18, -725.329, -621.824, -656.746, -673.522, -561.095, -704.885, -480.545, -717.969, -396.861, -721.875, -291.644, -713.207, -168.444, -687.895, -48.7717, -640.186, 86.4025, -557.641, 182.989, -465.572, 260.075, -346.213, 309.981, -244.923, 354.463, -114.02, 367.127, -40.1487, 371.453, 35.1127, 362.365, 94.7804, 340.142, 147.165, 284.583, 204.311, 202.038, 242.409, 105.206, 267.807, -2.32172, 272.969, -109.093, 255.108, -192.984, 222, -244.022, 190.024, -279.821, 152.153, -296.406, 118.591, -288.469, 74.1442, -261.483, 36.0466, -218.624, -6.81326, -180.526, -27.4495, -136.079, -30.6243, -112.268, -14.7502, -134.464, 78.5309, 78.8514, 133.276, 110.943, 6.79639, 103.392, -83.8156, 75.0456, -138.568, 8.37476, -203.651, -74.1701, -243.336, -158.302, -254.448, -231.323, -243.336, -317.043, -205.238, -394.825, -144.917, -467.846, -60.7849, -510.705, 48.7458, -518.642, 139.228, -490.069, 234.472, -424.986, 324.954, -310.693, 412.261, -172.589, 466.232, -10.6742, 494.805, 138.541, 483.694, 290.932, 444.009, 400.463, 391.624, 479.833, 326.541, 554.44, 213.836, 590.951, 78.9064, 586.189, -78.2462, 560.79, -195.714, 502.056, -352.867, 398.875, -543.355, 316.33, -646.536, 220.433, -735.089, 122.667, -795.752, 21.0737, -849.723, -82.1074, -892.583, -242.435, -930.681, -398, -941.793, -534.517, -932.268, -664.684, -903.695, -761.515, -865.597, -896.444, -765.591, -1009.15, -630.662, -1093.28, -478.271, -1182.16, -231.06, -1219.92, 70.9799, -1201.04, 284.295, -1119.87, 507.05, -959.41, 731.692, -706.452, 956.334, -457.269, 1107.35, -160.892, 1207.4, 120.382, 1248.93, 380.891, 1214.96, 567.779, 1137.56, 777.319, 971.436, 960.43, 760.008, 1083.13, 542.917, 1139.77, 295.621, 1168.08, -110.245, 1117.11, -380.193, 1017.06, -627.488, 862.267, -789.834, 671.605, -927.64, 252.524, -1140.96, 135.484, -1248.56, 99.6168, -1350.5, 110.943, -1488.3, -159.005, -1520.39, -147.678, -1618.56, 557.228, -1456.92, 1582.54, -349.581, 1112.67, 1314.02, -904.189, 1784.22, -1751, 31.3949, -995.399, -1390.92 )
+
+[node name="Win" parent="Planet" instance=ExtResource( 4 )]
+position = Vector2( -16.9683, 39.0089 )
+
+[node name="Rock" parent="Planet" instance=ExtResource( 5 )]
+modulate = Color( 0.25098, 0.572549, 0.2, 1 )
+position = Vector2( 122.903, -970.509 )
+
+[node name="Rock2" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( 247.224, 28.5905 )
+
+[node name="Rock4" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( 529.466, 292.418 )
+
+[node name="Rock5" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( 765.639, 221.707 )
+
+[node name="Rock6" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( 792.6, 599.961 )
+rotation = -0.170717
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock7" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( 961.871, 644.506 )
+rotation = -0.170717
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock8" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( -308.031, 1400.94 )
+rotation = -1.35896
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock9" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( -191.086, 1255.21 )
+rotation = -1.35896
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock3" parent="Planet/Rock" instance=ExtResource( 5 )]
+position = Vector2( 487.72, 23.01 )
+
+[node name="Rock8" parent="Planet" instance=ExtResource( 5 )]
+modulate = Color( 0.25098, 0.572549, 0.2, 1 )
+position = Vector2( 627.56, 801.507 )
+rotation = 2.34742
+
+[node name="Rock9" parent="Planet/Rock8" instance=ExtResource( 5 )]
+position = Vector2( 475.262, 126.086 )
+
+[node name="Rock10" parent="Planet/Rock8" instance=ExtResource( 5 )]
+position = Vector2( 275.321, -189.135 )
+
+[node name="Rock11" parent="Planet/Rock8" instance=ExtResource( 5 )]
+position = Vector2( 824.014, 270.33 )
+
+[node name="Rock12" parent="Planet/Rock8" instance=ExtResource( 5 )]
+position = Vector2( 778.812, 565.042 )
+rotation = -0.170717
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock13" parent="Planet/Rock8" instance=ExtResource( 5 )]
+position = Vector2( 961.87, 644.506 )
+rotation = -0.170717
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock14" parent="Planet/Rock8" instance=ExtResource( 5 )]
+position = Vector2( 580.344, 8.49902 )
+
+[node name="Rock9" parent="Planet" instance=ExtResource( 5 )]
+modulate = Color( 0.25098, 0.572549, 0.2, 1 )
+position = Vector2( -944.683, 369.246 )
+rotation = 4.23295
+
+[node name="Rock9" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 485.715, 32.7473 )
+scale = Vector2( 2, 2 )
+
+[node name="Rock10" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 217.563, -10.7154 )
+scale = Vector2( 2, 2 )
+
+[node name="Rock11" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 769.94, 367.455 )
+scale = Vector2( 2, 2 )
+
+[node name="Rock12" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 792.6, 599.961 )
+rotation = -0.170717
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock13" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 961.87, 644.506 )
+rotation = -0.170717
+scale = Vector2( 2.76, 1 )
+
+[node name="Rock14" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 612.878, 250.524 )
+scale = Vector2( 2, 2 )
+
+[node name="Rock15" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 81.778, 1420.29 )
+scale = Vector2( 3, 3 )
+
+[node name="Rock16" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( -189.576, 1588.94 )
+scale = Vector2( 3, 3 )
+
+[node name="Rock17" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 555.901, 1169.68 )
+scale = Vector2( 3, 3 )
+
+[node name="Rock18" parent="Planet/Rock9" instance=ExtResource( 5 )]
+position = Vector2( 480.297, 1538.71 )
+scale = Vector2( 3, 3 )
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.0509804, 0.133333, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="Level6" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 107.635
+margin_top = 158.089
+margin_right = 220.635
+margin_bottom = 189.089
+rect_scale = Vector2( 7.2631, 8.06189 )
+text = "YOU WON
+FUCKING LEGEND"
+__meta__ = {
+"_edit_use_anchors_": false
+}

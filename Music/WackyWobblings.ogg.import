@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WackyWobblings.ogg-1ab257352dc653d1219bc1b5735ada30.oggstr"
+
+[deps]
+
+source_file="res://Music/WackyWobblings.ogg"
+dest_files=[ "res://.import/WackyWobblings.ogg-1ab257352dc653d1219bc1b5735ada30.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,14 +1,256 @@
-[gd_scene format=2]
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Entities/GUI.gd" type="Script" id=1]
+[ext_resource path="res://Entities/DragPad.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Gradient.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Setinha.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 191.43, 192.199 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 317.817, 104.023 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource( 1 )
 
-[node name="Vida" type="ProgressBar" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 554.0
-margin_right = -622.0
-margin_bottom = -13.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 290 )
+
+[node name="Hints" type="Node2D" parent="."]
+
+[node name="Right" type="Area2D" parent="Hints"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 832.593, 407.962 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Hints/Right"]
+self_modulate = Color( 0, 0, 0, 0.396078 )
+position = Vector2( 0.441974, -2.90593 )
+rotation = 3.14159
+scale = Vector2( 1.27391, 1.31214 )
+texture = ExtResource( 3 )
+
+[node name="Setinha" type="Sprite" parent="Hints/Right/Sprite"]
+self_modulate = Color( 1, 1, 1, 0.396078 )
+position = Vector2( -98.1, -0.986816 )
+rotation = 1.5708
+scale = Vector2( 0.2935, 0.302308 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hints/Right"]
+shape = SubResource( 1 )
+
+[node name="Anim" type="AnimationPlayer" parent="Hints/Right"]
+anims/In = SubResource( 3 )
+anims/Out = SubResource( 4 )
+
+[node name="Left" type="Area2D" parent="Hints"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 191.575, 192.161 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Hints/Left"]
+self_modulate = Color( 0, 0, 0, 0.396078 )
+position = Vector2( -0.558029, 3.53156 )
+scale = Vector2( 1.27391, 1.30839 )
+texture = ExtResource( 3 )
+
+[node name="Setinha" type="Sprite" parent="Hints/Left/Sprite"]
+self_modulate = Color( 1, 1, 1, 0.396078 )
+position = Vector2( -98.1, -0.986816 )
+rotation = 1.5708
+scale = Vector2( 0.2935, 0.302308 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hints/Left"]
+shape = SubResource( 1 )
+
+[node name="Anim" type="AnimationPlayer" parent="Hints/Left"]
+anims/In = SubResource( 5 )
+anims/Out = SubResource( 6 )
+
+[node name="Up" type="Area2D" parent="Hints"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 706.227, 104.027 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Hints/Up"]
+self_modulate = Color( 0, 0, 0, 0.396078 )
+position = Vector2( -2.61829, 3.53156 )
+rotation = 1.5708
+scale = Vector2( 0.717054, 2.13656 )
+texture = ExtResource( 3 )
+
+[node name="Setinha" type="Sprite" parent="Hints/Up/Sprite"]
+self_modulate = Color( 1, 1, 1, 0.396078 )
+position = Vector2( -78.3649, -0.986816 )
+rotation = 1.5708
+scale = Vector2( 0.20079, 0.529147 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hints/Up"]
+shape = SubResource( 2 )
+
+[node name="Anim" type="AnimationPlayer" parent="Hints/Up"]
+anims/In = SubResource( 7 )
+anims/Out = SubResource( 8 )
+
+[node name="Down" type="Area2D" parent="Hints"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 317.835, 495.905 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Hints/Down"]
+self_modulate = Color( 0, 0, 0, 0.396078 )
+position = Vector2( 2.59671, -3.22925 )
+rotation = -1.5708
+scale = Vector2( 0.7197, 2.13715 )
+texture = ExtResource( 3 )
+
+[node name="Setinha" type="Sprite" parent="Hints/Down/Sprite"]
+self_modulate = Color( 1, 1, 1, 0.396078 )
+position = Vector2( -78.3649, -0.986816 )
+rotation = 1.5708
+scale = Vector2( 0.20079, 0.529147 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hints/Down"]
+shape = SubResource( 2 )
+
+[node name="Anim" type="AnimationPlayer" parent="Hints/Down"]
+anims/In = SubResource( 9 )
+anims/Out = SubResource( 10 )
+
+[connection signal="input_event" from="Hints/Right" to="." method="_on_LeftRight_input_event"]
+[connection signal="input_event" from="Hints/Left" to="." method="_on_LeftRight_input_event"]
+[connection signal="input_event" from="Hints/Up" to="." method="_on_UpDown_input_event"]
+[connection signal="input_event" from="Hints/Down" to="." method="_on_UpDown_input_event"]

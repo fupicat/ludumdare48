@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Planet.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Sprites/Level1.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=3]
+[ext_resource path="res://Entities/Win.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Pod/Pod.tscn" type="PackedScene" id=5]
+
+[node name="Earth" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Pod" parent="." instance=ExtResource( 5 )]
+position = Vector2( -152.223, -1048.68 )
+
+[node name="Planet" type="KinematicBody2D" parent="."]
+position = Vector2( 3.05176e-05, -0.101318 )
+rotation = -0.15359
+script = ExtResource( 1 )
+
+[node name="Earth" type="Sprite" parent="Planet"]
+position = Vector2( 1.81702, 3.1264 )
+scale = Vector2( 1.24183, 1.24183 )
+texture = ExtResource( 2 )
+
+[node name="Col" type="CollisionPolygon2D" parent="Planet"]
+polygon = PoolVector2Array( -63.6451, -1187.87, -66.0879, -587.533, 281.383, -550.589, 359.716, -339.394, 145.138, -426.688, 51.813, -209.201, -59.9654, -235.082, -215.277, -119.85, -20.5089, 111.541, 123.509, 18.609, 21.8266, -80.0995, 238.443, -64.6158, 286.487, -196.168, 569.045, -116.926, 449.227, -672.179, 94.747, -706.599, 77.9071, -1114.74, -59.0105, -1116.75, -58.4476, -1186.46, 161.442, -1171.95, 388.104, -756.723, 617.697, -673.963, 793.896, -361.611, 793.896, -59.937, 660.411, 180.334, 401.453, 313.818, 30.3672, 316.488, -281.985, 252.416, -471.533, 73.5471, -572.98, -156.045, -572.98, -444.371, -484.881, -676.633, -298.003, -759.393 )
+
+[node name="Win" parent="Planet" instance=ExtResource( 4 )]
+position = Vector2( 2.3811, 4.10193 )
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -4
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.0392157, 0.0313726, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

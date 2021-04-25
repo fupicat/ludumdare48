@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Planet.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Sprites/Level3.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Win.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Pod/Pod.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Rock.tscn" type="PackedScene" id=6]
+
+[node name="Mars" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Pod" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1116.33, -902.697 )
+
+[node name="Planet" type="KinematicBody2D" parent="."]
+position = Vector2( 2.77423, -1.78135 )
+rotation = -0.381799
+script = ExtResource( 1 )
+
+[node name="Mars" type="Sprite" parent="Planet"]
+scale = Vector2( 1.65211, 1.65211 )
+texture = ExtResource( 3 )
+
+[node name="Col" type="CollisionPolygon2D" parent="Planet"]
+polygon = PoolVector2Array( -389.164, -1483.02, -466.745, -1257.88, -484.899, -1170.81, -486.373, -1106.82, -479.737, -1075.09, -429.681, -1055, -324.526, -1043.45, -215.452, -1049.71, -54.8699, -1083.72, 212.9, -1171.58, 427.507, -1243.64, 543.28, -1266.58, 660.686, -1261.42, 727.935, -1249.1, 796.601, -1217.46, 859.468, -1173.91, 926.668, -1093.02, 968.268, -1004.1, 1020.11, -841.909, 1070.8, -595.76, 1102.66, -337.604, 1116.45, -67.1473, 1105.61, 172.883, 1079.88, 355.34, 1047.19, 487.487, 1010.08, 593.423, 958.011, 696.065, 905.495, 779.521, 865.425, 828.602, 815.761, 877.903, 760.491, 920.881, 690.012, 964.54, 595.53, 1003.3, 490.239, 1027.55, 364.335, 1033.85, 273.886, 1024.15, 156.986, 998.984, 35.3116, 958.599, -108.009, 893.798, -210.066, 834.679, -293.989, 775.583, -381.014, 697.099, -458.649, 610.289, -535.423, 503.262, -585.731, 399.604, -621.235, 292.214, -642.132, 172.544, -647.61, 56.6466, -633.084, -54.8479, -616.932, -134.241, -587.861, -209.658, -570.099, -244.86, -193.142, -2.79548, -5.81154, -445.272, 72.2646, -377.637, 126.367, -307.533, 180.636, -204.704, 218.01, -92.9337, 279.778, 174.987, -130.964, 270.128, -101.632, 314.563, -18.7817, 397.419, 76.1815, 462.157, 202.417, 521.308, 271.379, 545.367, 357.022, 564.028, 421.635, 565.779, 458.329, 558.74, 498.589, 533.78, 537.831, 490.267, 563.729, 449.864, 594.891, 369.24, 620.859, 274.435, 637.887, 162.735, 649.177, -25.0514, 646.65, -166.374, 638.252, -281.025, 690.861, -1007.4, 324.294, -717.422, 102.658, -642.228, -5.40698, -614.574, -138.118, -590.096, -275.446, -578.031, -383.142, -579.99, -475.111, -590.035, -548.378, -606.012, -624.283, -629.767, -683.972, -655.652, -759.513, -704.223, -822.966, -761.38, -856.494, -804.602, -891.826, -860.069, -918.219, -918.667, -937.329, -981.061, -946.694, -1031.86, -953.215, -1106.48, -952.802, -1169.68, -887.674, -1607.01, -2239.93, -990.672, -1977.44, 907.379, 452.375, 2047.17, 1925.54, 763.858, 1636.07, -1514.52, -814.941, -1925.86, -932.862, -1222.36, -670.318, -1373.53 )
+
+[node name="Win" parent="Planet" instance=ExtResource( 4 )]
+position = Vector2( -65.3268, -55.6518 )
+
+[node name="Rock2" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.94902, 0.741176, 0.121569, 1 )
+position = Vector2( -336.014, 6.31777 )
+rotation = 1.47532
+scale = Vector2( 5.589, 5.25652 )
+
+[node name="Rock3" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.94902, 0.741176, 0.121569, 1 )
+position = Vector2( 1043.71, -458.395 )
+rotation = 1.47532
+scale = Vector2( 5.589, 5.25652 )
+
+[node name="Rock4" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.94902, 0.741176, 0.121569, 1 )
+position = Vector2( -77.2463, -642.708 )
+rotation = 1.47532
+scale = Vector2( 5.589, 5.25652 )
+
+[node name="Rock" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.94902, 0.741176, 0.121569, 1 )
+position = Vector2( -12.9599, 668.677 )
+rotation = 0.507068
+scale = Vector2( 9.62592, 7.80434 )
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.517647, 0.227451, 0.0117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

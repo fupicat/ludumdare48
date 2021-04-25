@@ -1,0 +1,175 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Entities/Pod/Eye.png" type="Texture" id=1]
+[ext_resource path="res://Metal.wav" type="AudioStream" id=2]
+[ext_resource path="res://Entities/Pod.gd" type="Script" id=3]
+[ext_resource path="res://Entities/Pod/Pod1.png" type="Texture" id=5]
+[ext_resource path="res://Entities/Pod/Pod2.png" type="Texture" id=6]
+[ext_resource path="res://Entities/Pod/EyeClosed.png" type="Texture" id=7]
+
+[sub_resource type="PhysicsMaterial" id=4]
+bounce = 0.11
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 30.8063
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pod:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9, 10, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 11, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 12, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7, 14.8, 14.9, 15, 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9, 16, 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7, 16.8, 16.9, 17, 17.1, 17.2, 17.3, 17.4, 17.5, 17.6, 17.7, 17.8, 17.9, 18, 18.1, 18.2, 18.3, 18.4, 18.5, 18.6, 18.7, 18.8, 18.9, 19, 19.1, 19.2, 19.3, 19.4, 19.5, 19.6, 19.7, 19.8, 19.9, 20 ),
+"transitions": PoolRealArray( 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1, 2.2974, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pod:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 8, 12, 16 ),
+"transitions": PoolRealArray( -2, -2, -2, -2, -2 ),
+"update": 0,
+"values": [ -1.3, 1.3, -1.3, 0.0, 1.3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pod:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ),
+"transitions": PoolRealArray( -2, -2, -2, -2, -2, -2, -2, -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 0, -1 ), Vector2( 0, 1 ), Vector2( 0, -1 ), Vector2( 0, 1 ), Vector2( 0, -1 ), Vector2( 0, 1 ), Vector2( 0, -1 ), Vector2( 0, 1 ), Vector2( 0, -1 ), Vector2( 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pod/Eye:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.8, 3.9, 12.8, 12.9, 18.1, 18.2 ),
+"transitions": PoolRealArray( 1, 1, 23.4254, 1, 23.4254, 1, 23.4254 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Pod/Eye2:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.8, 3.9, 12.8, 12.9, 18.1, 18.2 ),
+"transitions": PoolRealArray( 1, 1.46409, 1, 1.46409, 1, 1.46409, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Pod/Eye:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 4.6, 4.8, 5.1, 6.5, 6.7, 7, 9.5, 10.1 ),
+"transitions": PoolRealArray( 1, 0.5, 2, 1, 0.5, 2, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( -13.3562, -11.8601 ), Vector2( -13.3562, -11.8601 ), Vector2( -45.1599, -36.8848 ), Vector2( -43.3254, -35.4413 ), Vector2( -43.3254, -35.4413 ), Vector2( 24.5945, -35.9708 ), Vector2( 23.7364, -35.4256 ), Vector2( 23.7364, -35.4256 ), Vector2( -13.3562, -11.8601 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Pod/Eye:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4.6, 4.8, 5.1, 6.5, 6.7, 7, 9.5, 10.1 ),
+"transitions": PoolRealArray( 1, 0.5, 2, 1, 0.5, 2, 1, -2, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 7.47804, 7.04669, 7.04669, -1.22367, -1.19599, -1.19599, 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Pod/Eye2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 4.6, 4.8, 5.1, 6.5, 6.7, 7, 9.5, 10.1, 12.5603 ),
+"transitions": PoolRealArray( 1, 0.5, 2, 1, 0.5, 2, 1, -2, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.8399, -11.6719 ), Vector2( 11.8399, -11.6719 ), Vector2( -19.9638, -36.6966 ), Vector2( -18.1293, -35.2531 ), Vector2( -18.1293, -35.2531 ), Vector2( 52.0691, -33.9897 ), Vector2( 51.1594, -33.485 ), Vector2( 51.1594, -33.485 ), Vector2( 11.8399, -11.6719 ), Vector2( 11.8399, -11.6719 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Pod/Eye2:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 4.6, 4.8, 5.1, 6.5, 6.7, 7, 9.5, 10.1, 12.5603 ),
+"transitions": PoolRealArray( 1, 0.5, 2, 1, 0.5, 2, 1, -2, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 7.47804, 7.04669, 7.04669, -1.75941, -1.71963, -1.71963, 0.0, 0.0 ]
+}
+
+[node name="Pod" type="RigidBody2D" groups=[
+"player",
+]]
+physics_material_override = SubResource( 4 )
+continuous_cd = 1
+can_sleep = false
+script = ExtResource( 3 )
+
+[node name="Col" type="CollisionShape2D" parent="."]
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Pod" type="Sprite" parent="Sprite"]
+position = Vector2( 0, -0.509999 )
+rotation = 0.00629626
+scale = Vector2( 0.312885, 0.312885 )
+texture = ExtResource( 6 )
+
+[node name="Eye" type="Sprite" parent="Sprite/Pod"]
+position = Vector2( -13.3562, -11.8601 )
+texture = ExtResource( 1 )
+
+[node name="Eye2" type="Sprite" parent="Sprite/Pod"]
+position = Vector2( 11.8399, -11.6719 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Broken" type="Sprite" parent="Sprite/Pod"]
+
+[node name="Anim" type="AnimationPlayer" parent="Sprite"]
+autoplay = "Idle"
+anims/Idle = SubResource( 3 )
+
+[node name="Vida" type="ProgressBar" parent="Sprite"]
+margin_left = -53.8416
+margin_top = -57.0872
+margin_right = 54.1584
+margin_bottom = -43.0872
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

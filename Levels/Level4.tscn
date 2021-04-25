@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Planet.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Sprites/Level4.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Win.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Pod/Pod.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Rock.tscn" type="PackedScene" id=6]
+
+[node name="Mars" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Pod" parent="." instance=ExtResource( 5 )]
+position = Vector2( -40.8577, -1445.76 )
+
+[node name="Planet" type="KinematicBody2D" parent="."]
+position = Vector2( 2.77423, -1.78135 )
+script = ExtResource( 1 )
+
+[node name="Mars" type="Sprite" parent="Planet"]
+scale = Vector2( 1.65211, 1.65211 )
+texture = ExtResource( 3 )
+
+[node name="Col" type="CollisionPolygon2D" parent="Planet"]
+polygon = PoolVector2Array( -147.388, -1618.08, -155.868, -1126, 458.536, -1141.35, 1013.52, 230.67, -625.216, 859.357, -501.671, -579.926, -0.533411, 112.658, 137.172, 0.422641, -313.704, -809.87, -824.877, -695.44, -890.739, 994.978, -512.732, 1139.91, 1158.46, 579.298, 1388.13, -0.144482, 533.793, -1306.21, 63.2959, -1276.16, 62.8466, -1498.72, -145.122, -1494.12, -140.091, -1623.82, 638.042, -1657.58, 1755, -812.386, 1760.61, 655.846, 881.385, 1652.7, -718.597, 1673.14, -1814.1, 352.745, -1422.37, -1478.49 )
+
+[node name="Win" parent="Planet" instance=ExtResource( 4 )]
+position = Vector2( 21.5492, -17.5111 )
+
+[node name="Rock2" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( -98.1418, -431.209 )
+rotation = -0.870406
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="Rock3" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( -770.037, -278.974 )
+rotation = 1.39049
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="Rock4" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( -621.202, 211.687 )
+rotation = -0.870406
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="Rock5" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 625.906, -719.706 )
+rotation = 0.00236239
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="Rock6" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 740.006, -1002.67 )
+rotation = -0.939752
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="Rock7" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 977.028, 8.96516 )
+rotation = 0.900998
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="Rock9" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( -296.706, 847.609 )
+rotation = 0.900998
+scale = Vector2( 2.64652, 2.58322 )
+
+[node name="Rock10" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 4.11391, 816.18 )
+rotation = 0.0334041
+scale = Vector2( 2.64652, 2.58322 )
+
+[node name="Rock11" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 502.487, 712.914 )
+rotation = 1.49774
+scale = Vector2( 2.64652, 2.58322 )
+
+[node name="Rock12" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 785.348, 439.033 )
+rotation = -0.208193
+scale = Vector2( 2.64652, 2.58322 )
+
+[node name="Rock13" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 219.627, 564.749 )
+rotation = 0.613177
+scale = Vector2( 2.64652, 2.58322 )
+
+[node name="Rock8" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( 1042.05, -440.124 )
+rotation = -1.64129
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="Rock" parent="Planet" instance=ExtResource( 6 )]
+modulate = Color( 0.788235, 0.286275, 0.964706, 1 )
+position = Vector2( -148.088, -76.8249 )
+rotation = -0.280182
+scale = Vector2( 2.24661, 5.85961 )
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.0470588, 0.0196078, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
