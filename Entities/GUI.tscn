@@ -5,7 +5,7 @@
 [ext_resource path="res://Entities/Gradient.png" type="Texture" id=3]
 [ext_resource path="res://Entities/Setinha.png" type="Texture" id=4]
 [ext_resource path="res://Entities/Rock.png" type="Texture" id=5]
-[ext_resource path="res://Entities/GloriaHallelujah-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://GloriaHallelujah-Regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 191.43, 192.199 )

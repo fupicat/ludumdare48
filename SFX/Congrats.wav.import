@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Congrats.wav-0eeda2f00787dc0e0a68abf25f579632.sample"
+
+[deps]
+
+source_file="res://SFX/Congrats.wav"
+dest_files=[ "res://.import/Congrats.wav-0eeda2f00787dc0e0a68abf25f579632.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

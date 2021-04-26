@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WackyIdlings.ogg-62c37f609082a7bb09814da6cbe342d4.oggstr"
+
+[deps]
+
+source_file="res://Music/WackyIdlings.ogg"
+dest_files=[ "res://.import/WackyIdlings.ogg-62c37f609082a7bb09814da6cbe342d4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -35,7 +35,7 @@ func _physics_process(delta):
         
         # Toca o som de impacto com pitch aleatório e volume baseado na
         # velocidade.
-        sfx.pitch_scale = rand_range(0.8, 1.2)
+        sfx.pitch_scale = rand_range(0.8, 2.2)
         sfx.volume_db = range_lerp(linear2db(
                 prev_vel.distance_to(linear_velocity) / 400),
                 -13, 7, -13, -1)
@@ -65,12 +65,12 @@ func _physics_process(delta):
     prev_vel = linear_velocity
     
     if abs(position.x) > 2000 or abs(position.y) > 2000:
-        # warning-ignore:return_value_discarded
-        get_tree().reload_current_scene()
+        level.death()
 
 func gui_update():
     $Sprite/Sprite/Vida.value = vida
 
 func win():
     can_die = false
+    $Sprite/SFX.play()
     $Sprite/Anim.play("Win")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Entities/Pod/Eye.png" type="Texture" id=1]
-[ext_resource path="res://Metal.wav" type="AudioStream" id=2]
+[ext_resource path="res://SFX/MetalHit.wav" type="AudioStream" id=2]
 [ext_resource path="res://Entities/Pod.gd" type="Script" id=3]
 [ext_resource path="res://Entities/Pod/LifebarBack.png" type="Texture" id=4]
 [ext_resource path="res://Entities/Pod/Pod1.png" type="Texture" id=5]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Entities/Pod/EyeClosed.png" type="Texture" id=7]
 [ext_resource path="res://Entities/Pod/LifebarFront.png" type="Texture" id=8]
 [ext_resource path="res://Entities/Explosion.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SFX/Congrats.wav" type="AudioStream" id=10]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.11
@@ -16,7 +17,7 @@ bounce = 0.11
 [sub_resource type="CircleShape2D" id=2]
 radius = 30.8063
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "In"
 length = 0.4
 step = 0.05
@@ -69,7 +70,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Win"
 loop = true
 tracks/0/type = "value"
@@ -121,8 +122,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 0.9 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Idle"
+[sub_resource type="Animation" id=5]
 length = 20.0
 loop = true
 tracks/0/type = "value"
@@ -249,12 +249,18 @@ shape = SubResource( 2 )
 
 [node name="Sprite" type="Node2D" parent="."]
 
+[node name="SFX" type="AudioStreamPlayer" parent="Sprite"]
+stream = ExtResource( 10 )
+
 [node name="Anim" type="AnimationPlayer" parent="Sprite"]
 autoplay = "In"
-anims/In = SubResource( 4 )
-anims/Win = SubResource( 5 )
+anims/In = SubResource( 3 )
+anims/Win = SubResource( 4 )
 
 [node name="Sprite" type="Node2D" parent="Sprite"]
+position = Vector2( 0, 1.64398 )
+rotation = 0.000565123
+scale = Vector2( 1.0822, 0.917801 )
 z_index = 1
 
 [node name="Pod" type="Sprite" parent="Sprite/Sprite"]
@@ -275,7 +281,7 @@ flip_h = true
 
 [node name="Anim" type="AnimationPlayer" parent="Sprite/Sprite"]
 autoplay = "Idle"
-anims/Idle = SubResource( 3 )
+anims/Idle = SubResource( 5 )
 
 [node name="Vida" type="TextureProgress" parent="Sprite/Sprite"]
 visible = false

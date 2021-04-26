@@ -16,6 +16,7 @@ var dead = false
 # Tudo isso só cria uma câmera com as opções certas e põe ela como filha do
 # planeta, só pra eu não ter que adicionar uma câmera em todo nível.
 func _ready():
+    Global.start_music()
     cam = Camera2D.new()
     cam.zoom = Vector2(2, 2)
     cam.smoothing_enabled = true
@@ -27,6 +28,8 @@ func _ready():
     
     gui = load("res://Entities/GUI.tscn").instance()
     add_child(gui)
+    
+    Global.fade("In")
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
@@ -54,11 +57,22 @@ func next():
     get_tree().change_scene("res://Levels/Level" + next + ".tscn")
 
 func death():
+    # warning-ignore:return_value_discarded
+    tween.interpolate_property(cam, "zoom",
+            cam.zoom, Vector2(2.3, 2.3), 1,
+            Tween.TRANS_QUART, Tween.EASE_OUT)
     var explosion = load("res://Entities/Explosion.tscn").instance()
+    camera_shake(100)
     add_child(explosion)
     explosion.position = pod.position
     explosion.emitting = true
     explosion.get_node("Explosion").emitting = true
+    explosion.get_node("SFX").play()
+    
+    var fragment = load("res://Entities/Fragments.tscn").instance()
+    fragment.global_position = pod.global_position
+    add_child(fragment)
+    
     pod.queue_free()
     dead = true
     gui.die()
@@ -66,10 +80,16 @@ func death():
 func win():
     gui.win()
     pod.win()
+    # warning-ignore:return_value_discarded
+    tween.interpolate_property(cam, "zoom",
+            cam.zoom, Vector2(1, 1), 0.5,
+            Tween.TRANS_QUART, Tween.EASE_OUT)
+    # warning-ignore:return_value_discarded
+    tween.start()
 
 func camera_shake(intensity):
     # warning-ignore:return_value_discarded
     tween.interpolate_property(self, "shake_intensity",
-            intensity, 0, 0.5, Tween.TRANS_QUART, Tween.EASE_OUT)
+            intensity, 0, 0.8, Tween.TRANS_QUART, Tween.EASE_OUT)
     # warning-ignore:return_value_discarded
     tween.start()

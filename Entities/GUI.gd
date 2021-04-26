@@ -10,6 +10,7 @@ var multiply = 1
 var restart = 0
 var dead_mode = false
 var can_control = true
+var fading = false
 
 func _ready():
     for butt in $Hints.get_children():
@@ -19,7 +20,10 @@ func _ready():
 
 func _input(event):
     if not can_control:
-        if event.is_action_pressed("click"):
+        if event.is_action_pressed("click") and not fading:
+            fading = true
+            Global.fade("Out")
+            yield(Global, "faded")
             level.next()
         return
     if event.is_action_released("click"):
@@ -69,4 +73,7 @@ func _on_Restart_input_event(_viewport, event, _shape_idx):
         if restart == 1:
             $Hints/Restart/Label.text = "Press again to restart"
         if restart == 2:
+            Global.fade("Out")
+            yield(Global, "faded")
+            Global.restart_count += 1
             var _err = get_tree().reload_current_scene()
